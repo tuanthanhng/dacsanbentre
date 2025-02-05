@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặc Sản Bến Tre</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            color: #333; /* Màu chữ chính */
+        }
+
+        header {
+            background-color: #006D3D;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            font-weight: bold;
+            font-size: 24px;
+            width: 100%;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px 0;
+            background-color: #008148;
+            width: 100%;
+        }
+
+        .logo {
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #FFD700;
+        }
+
+        .profile-card {
+            background-color: white;
+            padding: 40px;
+            width: 420px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .profile-card img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .profile-card h2 {
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        .profile-card p {
+            color: #555;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-links a {
+            font-size: 24px;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #007bff;
+        }
+
+        h1 {
+            color: #004d26; /* Màu xanh đậm */
+        }
+
+        h3 {
+            color: #008148; /* Màu xanh lá đậm */
+            text-align: left; /* Căn trái */
+        }
+
+        p {
+            color: #555; /* Màu xám đậm */
+        }
+
+        .map-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+
+        .content-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Đặc Sản Bến Tre
+    </header>
+    <div class="nav-container">
+        <img src="images/logos.jpeg" alt="Logo Bến Tre" class="logo" />
+        <nav>
+            <ul>
+                <li><a href="bentre.html">Bến Tre</a></li>
+                <li><a href="trangchu.html">Các Món Ăn</a></li>
+                <li><a href="chitiet.html">Chi Tiết</a></li>
+                <li><a href="muahang.html">Mua Nguyên Liệu</a></li>
+                <li><a href="lienhe.html">Liên Hệ</a></li>
+            </ul>
+        </nav>
+    </div>
+    <section>
+        <h1>Vài Nét Về Quê Hương Bến Tre</h1>
+    </section>
+        <div class="map-container">
+            <!-- Nhúng Google Map -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.1016935644596!2d106.3665081!3d10.2517742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527db3c9fd863%3A0x7ef7da64d9ecf59d!2zQmVuIFRyZSBUcmFjaG9uIE5ndXnhu5Fj!5e0!3m2!1svi!2s!4v1677078093404!5m2!1svi!2s" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+            <div class="content-container">
+        <h3>1. Vị trí địa lý đặc biệt</h3>
+        <p>Bến Tre nằm ở cuối hạ lưu sông Mekong, bao gồm ba cù lao chính là An Hóa, Bảo và Minh. Tỉnh này giáp với Tiền Giang, Vĩnh Long, và Trà Vinh.</p>
+        <h3>2. Sông nước</h3>
+        <p>Bến Tre được biết đến như là “Vương quốc dừa” vì có diện tích dừa lớn nhất cả nước. Hệ thống sông ngòi chằng chịt mang lại nguồn tài nguyên thiên nhiên phong phú và điều kiện thuận lợi cho nông nghiệp và ngư nghiệp.</p>
+        <h3>3. Du lịch</h3>
+        <p>Bến Tre có nhiều điểm du lịch hấp dẫn như: Cồn Phụng, Cồn Quy, Cồn Ốc, và các làng nghề truyền thống như làm kẹo dừa, đan lát, và nấu rượu. Du khách còn có thể tham gia các tour du lịch sinh thái để trải nghiệm cuộc sống miệt vườn.</p>
+        <h3>4. Văn hóa</h3>
+        <p>Văn hóa Bến Tre mang đậm nét miền Tây Nam Bộ với những lễ hội truyền thống, các làn điệu đờn ca tài tử, và ẩm thực phong phú, đặc biệt là các món ăn từ dừa.</p>
+        <h3>5. Kinh tế</h3>
+        <p>Nền kinh tế của Bến Tre chủ yếu dựa vào nông nghiệp, đặc biệt là trồng dừa, các loại cây ăn trái và nuôi trồng thủy sản. Ngoài ra, công nghiệp chế biến nông sản và thủ công mỹ nghệ cũng đóng vai trò quan trọng.</p>
+    </div>
+    <footer>
+        <p>&copy; 2025 Trang Web Của Tôi</p>
+    </footer>
+</body>
+</html>

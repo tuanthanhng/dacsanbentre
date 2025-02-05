@@ -1,0 +1,408 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Đặc Sản Bến Tre</title>
+  <style>
+    /* Đảm bảo khung chiếm toàn bộ màn hình */
+    html, body {
+      height: 100%; /* Đảm bảo chiều cao của body và html là 100% */
+      margin: 0; /* Loại bỏ margin mặc định */
+      padding: 0; /* Loại bỏ padding mặc định */
+      display: flex; /* Sử dụng Flexbox để căn giữa */
+      flex-direction: column; /* Xếp các phần tử theo chiều dọc */
+      background-color: #f4f4f4; /* Màu nền sáng cho toàn bộ trang */
+      font-family: 'Arial', sans-serif; /* Chọn font chữ dễ đọc */
+    }
+
+    /* CSS cho header, giữ nó ở trên cùng */
+    header {
+        background-color: #008148;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        font-weight: bold;
+      }
+
+      hd {
+        margin: 0;
+        padding-bottom: 10px; /* Tạo khoảng cách giữa tiêu đề và thanh menu */
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .nav-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        padding: 10px 0;
+      }
+
+      .logo {
+        height: 80px; /* Điều chỉnh kích thước logo */
+        width: 80px; /* Đảm bảo hình tròn */
+        border-radius: 50%; /* Làm cho logo hình tròn */
+        object-fit: cover; /* Đảm bảo logo không bị méo */
+      }
+
+      nav ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        gap: 15px;
+      }
+
+      nav ul li {
+        display: inline;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+      }
+
+      section {
+        padding: 20px;
+        text-align: center;
+      }
+
+    /* Container nội dung, căn giữa màn hình */
+    .container {
+      border: 3px solid #4CAF50; /* Viền màu xanh lá đậm */
+      border-radius: 20px; /* Bo góc mềm mại */
+      padding: 30px; /* Khoảng cách bên trong khung */
+      width: 95%; /* Chiều rộng của khung là 95% */
+      max-width: 1000px; /* Chiều rộng tối đa của khung */
+      min-height: auto; /* Thiết lập chiều cao tối thiểu cho container */
+      box-sizing: border-box; /* Bao gồm cả padding và border trong kích thước tổng thể */
+      margin: 20px auto; /* Căn giữa container trên trang */
+      background-color: #ffffff; /* Màu nền trắng cho khung */
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Thêm bóng nhẹ cho khung */
+    }
+
+    /* Căn giữa chỉ tiêu đề "Kẹo Dừa" */
+    h1 {
+      color: #4CAF50; /* Màu xanh lá đậm cho tiêu đề */
+      font-size: 2.5em; /* Kích thước chữ lớn hơn */
+      margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+      text-align: center; /* Căn giữa tiêu đề */
+    }
+
+    /* Màu sắc cho mô tả */
+    h3, h2 {
+      color: #388E3C; /* Màu xám cho mô tả */
+      font-size: 1.5em;
+      margin-bottom: 20px; /* Khoảng cách dưới mô tả */
+    }
+
+    /* CSS để các ảnh nằm ngang */
+    .img-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: nowrap; /* Cho phép các ảnh xuống dòng khi cần */
+      width: 100%;
+      gap: 15px; /* Khoảng cách giữa các ảnh */
+    }
+
+    .img-container figure {
+      width: calc(33.333% - 10px); /* Đảm bảo mỗi figure chiếm khoảng 1/3 chiều rộng với khoảng cách */
+      margin-bottom: 15px; /* Khoảng cách dưới mỗi figure */
+      text-align: center; /* Căn giữa văn bản trong figure */
+    }
+
+    .img-container img {
+      width: 100%; /* Đảm bảo ảnh chiếm hết chiều rộng của figure */
+      border-radius: 10px; /* Bo góc cho ảnh */
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Thêm bóng nhẹ cho ảnh */
+      transition: transform 0.3s ease; /* Thêm hiệu ứng khi hover */
+    }
+
+    .img-container img:hover {
+      transform: scale(1.15); /* Phóng to ảnh khi hover */
+    }
+
+    /* Phụ đề cho mỗi ảnh */
+    figcaption {
+      font-size: 1.1em;
+      color: #333; /* Màu xám cho phụ đề */
+      margin-top: 10px; /* Khoảng cách trên phụ đề */
+    }
+
+    /* Media query để điều chỉnh cho màn hình nhỏ hơn */
+    @media (max-width: 768px) {
+      .container {
+        width: 100%; /* Khung vẫn chiếm toàn bộ chiều rộng màn hình */
+        height: auto; /* Cho phép chiều cao thay đổi linh hoạt */
+      }
+      .img-container {
+        flex-direction: column; /* Các ảnh sẽ xếp theo chiều dọc */
+        align-items: center; /* Căn giữa các ảnh theo chiều ngang */
+      }
+      .img-container figure {
+        width: 100%; /* Các figure sẽ chiếm toàn bộ chiều rộng */
+      }
+      .img-container img {
+        max-width: 100%; /* Các ảnh sẽ chiếm toàn bộ chiều rộng */
+      }
+    }
+  </style>
+</head>
+<body>
+    <header>
+      <hd>Đặc Sản Bến Tre</hd>
+      <div class="nav-container">
+        <img src="images/logo.jpeg" alt="Logo Bến Tre" class="logo" />
+        <nav>
+          <ul>
+            <li><a href="bentre.html">Bến Tre</a></li>
+            <li><a href="trangchu.html">Các Món Ăn</a></li>
+            <li><a href="chitiet.html">Chi Tiết</a></li>
+            <li><a href="muahang.html">Mua Nguyên Liệu</a></li>
+            <li><a href="lienhe.html">Liên Hệ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  <div class="container">
+    <h1 id="keo_dua">Kẹo Dừa</h1>
+    <h3>Kẹo dừa được làm từ những nguyên liệu gì?</h3>
+    <div class="img-container">
+      <figure>
+        <img src="https://daotaobeptruong.vn/wp-content/uploads/2018/06/cach-nau-nuoc-cot-dua.jpg" alt="Nước Cốt Dừa"/>
+        <figcaption>Nước cốt dừa nguyên chất</figcaption>
+      </figure>
+      <figure>
+        <img src="https://yeva.vn/wp-content/uploads/mach-nha.jpg" alt="Mạch Nha"/>
+        <figcaption>Mạch nha</figcaption>
+      </figure>
+      <figure>
+        <img src="https://giaodich24.vn/data/uploads/public/bientap@hts.vn/duong-trang-1516091523618.jpg" alt="Đường Trắng"/>
+        <figcaption>Đường trắng</figcaption>
+      </figure>
+    </div>
+
+    <!-- Đảm bảo các phần dưới này nằm trong container và căn trái -->
+    <h2>Cách làm sản phẩm</h2>
+    <h4>Bước 1: Lựa chọn nguyên liệu</h4>
+    <p>Khâu chọn nguyên liệu đóng vai trò quyết định chất lượng kẹo dừa. Các nguyên liệu chính gồm dừa tươi, đường (đường trắng hoặc đường nâu), mạch nha, và các phụ gia tạo hương như vani, mè, đậu phộng rang. Dừa xiêm thường được ưu tiên sử dụng vì độ béo cao và hương thơm tự nhiên. Đường và mạch nha phải được bảo quản cẩn thận ở nơi khô ráo để giữ độ tinh khiết và tránh ẩm mốc.</p>
+    <h4>Bước 2: Sơ chế nguyên liệu</h4>
+    <p>Dừa tươi sau khi thu hoạch sẽ được làm sạch vỏ, rửa kỹ và bào thành sợi nhỏ. Đây là bước quan trọng để đảm bảo giữ trọn vẹn hương vị và chất lượng của cơm dừa. Phần sợi dừa sau đó được trộn đều để chuẩn bị cho các giai đoạn tiếp theo.</p>
+    <h4>Bước 3: Xay và ép nước cốt dừa</h4>
+    <p>Sợi dừa đã qua sơ chế sẽ được xay nhuyễn và ép kỹ để lấy phần nước cốt đậm đặc. Nước cốt dừa là thành phần chính, quyết định độ béo và mùi thơm của kẹo. Quy trình ép thường được thực hiện qua nhiều lần để đảm bảo thu được phần nước cốt chất lượng nhất. Phần bã dừa còn lại có thể tận dụng làm thức ăn chăn nuôi hoặc nguyên liệu cho các sản phẩm phụ.</p>
+    <h4>Bước 4: Phối trộn nguyên liệu</h4>
+    <p>Nước cốt dừa, mạch nha và đường được phối trộn theo tỷ lệ phù hợp, thường là 1 phần nước cốt dừa, 1 phần đường, và 0,5 phần mạch nha. Tùy vào khẩu vị hoặc công thức riêng, nhà sản xuất có thể thêm các phụ gia như vani, mè hoặc đậu phộng để tăng hương vị. Nguyên liệu sau đó được khuấy đều để hòa quyện vào nhau.</p>
+    <h4>Bước 5: Sên kẹo</h4>
+    <p>Quá trình sên nguyên liệu là bước quan trọng nhất trong sản xuất kẹo dừa. Hỗn hợp sau khi phối trộn sẽ được nấu trên lửa, yêu cầu khuấy liên tục để tránh cháy khét. Lửa phải được điều chỉnh cẩn thận: quá lớn dễ làm cháy nguyên liệu, quá nhỏ khiến quá trình sên kéo dài và kẹo không đạt độ dẻo mong muốn. Hiện nay, nhiều cơ sở sản xuất đã ứng dụng máy móc hiện đại để tự động hóa công đoạn này, giúp tiết kiệm thời gian và đảm bảo chất lượng đồng đều.</p>
+    <h4>Bước 6: Đổ khuôn và làm nguội</h4>
+    <p>Sau khi sên đạt độ đặc lý tưởng, hỗn hợp kẹo sẽ được đổ vào khuôn đã chuẩn bị sẵn. Khuôn có thể làm bằng kim loại hoặc silicon. Sau khi kẹo nguội dần, chúng sẽ cứng lại thành các miếng nhỏ vừa ăn. Lúc này, kẹo sẽ được cắt thành các miếng vuông nhỏ hoặc tạo hình theo sở thích.</p>
+    <h4>Bước 7: Bao gói và bảo quản</h4>
+    <p>Cuối cùng, kẹo dừa sau khi đã nguội sẽ được bao gói kín, đóng gói vào bao bì hút chân không để bảo quản lâu dài. Bao bì sản phẩm cũng phải được thiết kế đẹp mắt để thu hút người tiêu dùng. Kẹo dừa sẽ được bảo quản ở nơi thoáng mát, khô ráo để giữ được độ dẻo và hương vị lâu dài.</p>
+  </div>
+   <div class="container">
+    <h1 id="mut_dua">Mứt Dừa</h1>
+    <h3>Mứt dừa được làm từ những nguyên liệu gì?</h3>
+    <div class="img-container">
+      <figure>
+        <img src="https://cdn.nguyenkimmall.com/images/companies/_1/tin-tuc/kinh-nghiem-meo-hay/n%E1%BA%A5u%20%C4%83n/cach-lam-mut-dua-truyen-thong-1.jpg" alt="Nước Cốt Dừa"/>
+        <figcaption>Cái Dừa</figcaption>
+      </figure>
+      <figure>
+        <img src="https://toshiko.vn/storage/images/2021/07/uong-sua-tuoi-khong-duong-co-map-khong-1.jpg" alt="Mạch Nha"/>
+        <figcaption>Sữa</figcaption>
+      </figure>
+      <figure>
+        <img src="https://file.hstatic.net/1000173770/file/tong-hop-10-loai-duong-cung-patyca__2__c16d339d79c84b6f83a14d4fe00e1ea7_grande.png" alt="Đường Trắng"/>
+        <figcaption>Đường trắng</figcaption>
+      </figure>
+    </div>
+
+    <!-- Đảm bảo các phần dưới này nằm trong container và căn trái -->
+    <h2>Cách làm sản phẩm</h2>
+    <h4>Bước 1:</h4>
+    <p>Đầu tiên, bạn đem cùi dừa mua về nạo ra, cạo bỏ phần vỏ nâu bên ngoài và cắt thành sợi mỏng. Sau đó, bạn cho phần dừa vừa nạo ngâm trong nước lạnh rồi chần sơ qua nước sôi trong 1 - 2 phút. Tiếp theo, bạn vớt dừa ra để ráo.
+    <h4>Bước 2:</h4>
+    <p>Bạn tiến hành ướp dừa với đường theo tỷ lệ cứ 1kg dừa là 500g đường trong vòng 1 - 2 tiếng. Cứ 30 phút thì bạn nên đảo một lần cho đường nhanh tan.</p>
+    <h4>Bước 3:</h4>
+    <p>Bạn cho hỗn hợp dừa và đường lên chảo sên với lửa vừa, đến khi sôi thì vặn lửa nhỏ nhất. Trong quá trình này, bạn cứ tiếp tục đảo đều tay cho đến khi thấy đường sánh lại thì bỏ ống vani vào.</h4>
+    <h4>Bước 4:</h4>
+    <p>Bạn tiếp tục đảo dừa đều tay cho đến khi thấy dừa bắt đầu bám trắng thì tắt bếp, tiếp tục đảo thêm vài lần nữa.</p>
+    <h4>Bước 5:</h4>
+    <p>Đổ dừa ra khay inox hoặc mâm nhôm lớn và hong khô mứt dừa. Sau khi mứt dừa khô hoàn toàn rồi thì bạn chỉ cần bảo quản trong lọ thủy tinh, nhựa,... để dùng dần.</p>
+  </div>
+  <div class="container">
+    <h1 id="ca_bong">Cá Bống Kho Nước Cốt Dừa</h1>
+    <h3>Cá bống kho nước cốt dừa được làm từ những nguyên liệu gì?</h3>
+    <div class="img-container">
+      <figure>
+        <img src="https://bizweb.dktcdn.net/100/365/460/products/ca-bong-dua-2.jpg?v=1569819571640" alt="Cá Bống"/>
+        <figcaption>Cá Bống</figcaption>
+      </figure>
+      <figure>
+        <img src="https://www.btaskee.com/wp-content/uploads/2021/08/cach-lam-va-cach-bao-quan-nuoc-cot-dua-1.jpg" alt="Nước Cốt Dừa"/>
+        <figcaption>Nước Cốt Dừa</figcaption>
+      </figure>
+      <figure>
+        <img src="https://i.vietgiaitri.com/2022/2/24/cach-lam-sa-te-sa-ot-cay-ngon-de-duoc-lau-cuc-don-gian-61f-6327714.jpg" alt="Hương Liệu"/>
+        <figcaption>Hương Liệu</figcaption>
+      </figure>
+      <figure>
+        <img src="https://duraval.vn/wp-content/uploads/2024/11/cac-loai-gia-vi-2-min.png" alt="Gia Vị"/>
+        <figcaption>Gia Vị</figcaption>
+      </figure>
+    </div>
+
+    <!-- Đảm bảo các phần dưới này nằm trong container và căn trái -->
+    <h2>Cách làm sản phẩm</h2>
+    <h4>Bước 1: Sơ chế cá bống</h4>
+    <p> Khi cá bống được mua về, dùng dao cắt đi phần đuôi và loại bỏ phần ruột của cá rồi rửa sạch với nước
+  Sau đó để cá bớt tanh và nhớt thì ngâm cá trong nước muối loãng khoảng 10 phút rồi rửa lại bằng nước sạch</p>
+    <h4>Bước 2: Sơ chế các nguyên liệu khác</h4>
+    <p>Đầu tiên cắt bỏ bớt phần góc của 3 nhánh sả, để ráo nước rồi dùng dao băm nhuyễn 2 nhánh, 1 nhánh còn lại cắt lát.
+  Hành tím và tỏi bóc vỏ rồi băm nhỏ
+  Ớt sừng bỏ cuốn, rửa sạch rồi cắt lát</p>
+    <h4>Bước 3: Kho cá</h4>
+    <p>Bắc chảo lên bếp, đun sôi 2 muỗng canh dầu ăn, khi dầu sôi thì cho vào sả, hành tím, tỏi đã sơ chế cùng với 2 muỗng cà phê ớt xay và 1/2 muỗng cà phê ớt bột đỏ.
+  Sau đó, cho cá vào chảo với 100ml nước lạnh, nấu với lửa lớn cho đến khi cá chín thì thêm vào 200ml nước cốt dừa, 2 muỗng cà phê hạt nêm, 2 muỗng cà phê đường nâu và 2 muỗng canh nước mắm.
+  Lắc chảo cho gia vị ngấm rồi kho với lửa vừa trong 10 phút đến khi nước đã rút bớt, nêm nếm lại cho vừa ăn thì tắt bếp.
+  Chuyển cá sang nồi đất, trang trí thêm 1 quả ớt sừng cắt lát và 1 ít sả cắt lát là hoàn thành.</p>
+    <h4>Bước 4: Trình bày và thưởng thức</h4>
+    <p>Cho món ăn ra đĩa và mời gia đình cùng thưởng thức khi còn nóng với cơm trắng, sẽ rất tuyệt vời đấy.</p>
+  </div>
+  <div class="container">
+    <h1 id="banh_xeo">Bánh Xèo Ốc Gạo</h1>
+    <h3>Bánh xèo ốc gạo được làm từ những nguyên liệu gì?</h3>
+    <div class="img-container">
+      <figure>
+        <img src="https://lisemex.com.vn/wp-content/uploads/2020/10/bot-gao-te.jpg" alt="Bột Gạo"/>
+        <figcaption>Bột Gạo</figcaption>
+      </figure>
+      <figure>
+        <img src="https://daotaobeptruong.vn/wp-content/uploads/2018/06/cach-nau-nuoc-cot-dua.jpg" alt="Nước Cốt Dừa"/>
+        <figcaption>Nước Cốt Dừa</figcaption>
+      </figure>
+      <figure>
+        <img src="https://haisantrungnam.vn/wp-content/uploads/2021/03/oc-gao-anh-dai-dien.jpg" alt="Ốc Gạo"/>
+        <figcaption>Ốc Gạo</figcaption>
+      </figure>
+    </div>
+    <div class="img-container">
+      <figure>
+        <img src="https://vnn-imgs-f.vgcloud.vn/2019/06/15/15/nhung-nguoi-tuyet-doi-khong-an-gia-do-vi-cuc-doc-2.jpg" alt="Đỗ (giá)"/>
+        <figcaption>Đỗ (giá)</figcaption>
+      </figure>
+      <figure>
+        <img src="https://sohanews.sohacdn.com/zoom/700_438/160588918557773824/2023/8/11/photo1691727169338-16917271694841636174405.jpeg" alt="Rau Sống"/>
+        <figcaption>Rau Sống</figcaption>
+      </figure>
+      <figure>
+        <img src="https://duraval.vn/wp-content/uploads/2024/11/cac-loai-gia-vi-2-min.png" alt="Gia Vị"/>
+        <figcaption>Gia Vị</figcaption>
+      </figure>
+    </div>
+    <h2>Cách làm sản phẩm</h2>
+    <h4>Bước 1: Chuẩn bị bột bánh </h4>
+    <p> Trước tiên, bột gạo được trộn với nước cốt dừa, một chút muối,bột nghệ và nước lọc để tạo thành hỗn hợp bột sền sệt.Cho thêm trứng gà vào giúp vỏ bánh giòn.Sau đó, để bột nghỉ khoảng 30 phút cho bột nở đều. </p>
+    <h4>Bước 2: Sơ chế ốc gạo </h4>
+    <p>Ốc gạo được làm sạch, ngâm trong nước vo gạo và ớt để loại bỏ cát và bụi bẩn. Sau đó, cho ốc vào nồi hấp chín. Khi ốc đã chín, tách vỏ và lấy thịt, để riêng. 
+Để phần nhân bánh thêm ngon mang ốc gạo xào sơ qua với hành tây nêm chút gia vị cho thêm đậm đà. </p>
+    <h4>Bước 3: Chiên bánh </h4>
+    <p>Đặt chảo lên bếp, cho một chút dầu ăn vào và đun nóng. Khi dầu đã nóng, đổ một lượng bột vừa đủ vào chảo, sau đó cho ốc gạo lên trên bề mặt bột và tôm, giá để tăng thêm hương vị cho bánh. Sau khoảng 3-5 phút, khi bánh đã vàng và giòn. </p>
+    <h4>Bước 4: Trình bày và thưởng thức</h4>
+    <p>Khi bánh xèo đã hoàn thành, bày ra đĩa và kèm theo rau sống. Món ăn sẽ ngon hơn khi chấm cùng nước mắm chua ngọt. </p>
+  </div>
+  <div class="container">
+    <h1 id="banh_trang">Bánh Tráng Mỹ Lồng</h1>
+    <h3>Bánh tráng Mỹ Lồng được làm từ những nguyên liệu gì?</h3>
+    <div class="img-container">
+      <figure>
+        <img src="https://fareastrice.com/upload/An_Giang_Glutinous_1.jpg" alt="Gạo Nếp"/>
+        <figcaption>Gạo Nếp</figcaption>
+      </figure>
+      <figure>
+        <img src="https://cdn-img-v2.mybota.vn/media/4678/Nong%20san/hat%20kho/muoi-vung1.jpg" alt="Muối Mè"/>
+        <figcaption>Muối Mè</figcaption>
+      </figure>
+      <figure>
+        <img src="https://sudospaces.com/karofi-com/karofi/images/uploads/images/Lien/Vai-tro-quan-trong-cua-nguon-nuoc-sach-doi-voi-chung-ta-va-bien-phap.jpg" alt="Nước Sạch"/>
+        <figcaption>Nước Sạch</figcaption>
+      </figure>
+    </div>
+    <div class="img-container">
+      <figure>
+        <img src="https://media.cooky.vn/images/blog-2016/cac-loai-duong.jpeg" alt="Đường Trắng"/>
+        <figcaption>Đường Trắng</figcaption>
+      </figure>
+      <figure>
+        <img src="https://ingreda.vn/wp-content/uploads/2022/06/huong-sua-tuoi.jpg" alt="Sữa Tươi"/>
+        <figcaption>Sữa Tươi</figcaption>
+      </figure>
+      <figure>
+        <img src="https://media-cdn-v2.laodong.vn/storage/newsportal/2022/4/15/1034494/20190624_120723_4039.jpg" alt="Trứng Gà"/>
+        <figcaption>Trứng Gà</figcaption>
+      </figure>
+    </div>
+    <h2>Cách làm sản phẩm</h2>
+    <h4>Bước 1: Ngâm gạo </h4>
+    <p>Ngâm gạo nếp trong nước khoảng 3-4 giờ hoặc qua đêm. Sau đó, vo sạch gạo </p>
+    <h4>Bước 2: Xay bột </h4>
+    <p>Xay gạo nếp đã ngâm thành bột mịn. Bạn có thể xay tại nhà hoặc mang đến các cơ sở xay bột chuyên nghiệp. Nếu không xay bột tại nhà, bạn có thể mua bột gạo nếp làm sẵn. </p>
+    <h4>Bước 3: Pha bột </h4>
+    <p>Trộn bột gạo với nước theo tỉ lệ khoảng 1:2,5. Thêm muối vào hỗn hợp và khuấy đều để bột mịn và không bị vón cục. Bạn cũng có thể thêm dừa nạo nếu muốn.</p>
+    <h4>Bước 4: Rang mè</h4>
+    <p>Rang mè (vừng) cho đến khi có mùi thơm và màu vàng nâu. Để mè nguội trước khi trộn vào bột. </p>
+    <h4>Bước 5: Tráng bánh</h4>
+    <p>Chuẩn bị lò tráng bánh. Đun nước sôi trong nồi. Tráng một lớp mỏng bột lên khung tráng bánh (hoặc miếng vải căng trên miệng nồi). Rắc mè lên bề mặt bánh.Đậy nắp nồi lại và chờ khoảng 1-2 phút cho bánh chín. Bánh chín sẽ trong suốt và dễ dàng tách khỏi miếng vải hoặc khung tráng bánh.
+    </p>
+    <h4>Bước 5: Phơi bánh</h4>
+      <p>Lấy bánh ra và phơi trên giàn tre, giàn lá dưới ánh nắng mặt trời. Phơi bánh đến khi khô hoàn toàn, giòn và có màu trắng trong. </p>
+  </div>
+  <div class="container">
+    <h1 id="banh_phong">Bánh Phồng Sơn Đốc</h1>
+    <h3>Bánh phồng Sơn Đốc được làm từ những nguyên liệu gì?</h3>
+    <div class="img-container">
+      <figure>
+        <img src="https://fareastrice.com/upload/An_Giang_Glutinous_1.jpg" alt="Gạo Nếp"/>
+        <figcaption>Gạo Nếp</figcaption>
+      </figure>
+      <figure>
+        <img src="https://www.btaskee.com/wp-content/uploads/2021/08/cach-lam-va-cach-bao-quan-nuoc-cot-dua-1.jpg" alt="Nước Cốt Dừa"/>
+        <figcaption>Nước Cốt Dừa</figcaption>
+      </figure>
+      <figure>
+        <img src="https://giaodich24.vn/data/uploads/public/bientap@hts.vn/duong-trang-1516091523618.jpg" alt="Đường Trắng"/>
+        <figcaption>Đường trắng</figcaption>
+      </figure>
+    </div>
+    <h4>Nguyên liệu thêm hương vị</h4>
+    <div class="img-container">
+      <figure>
+        <img src="https://cdn.shopify.com/s/files/1/0367/6189/4956/files/cong-dung-cua-la-dua-2_480x480.png?v=1719767547" alt="Lá Dứa"/>
+        <figcaption>Lá Dứa</figcaption>
+      </figure>
+      <figure>
+        <img src="https://chefjob.vn/wp-content/uploads/2020/07/vani-loai-huong-lieu-ngot-ngao-dung-lam-banh.jpg" alt="Vani"/>
+        <figcaption>Vani</figcaption>
+      </figure>
+      <figure>
+        <img src="https://suckhoedoisong.qltns.mediacdn.vn/324455921873985536/2023/9/26/cong-dung-tuyet-voi-cua-hat-vung-doi-voi-suc-khoe-169570229736928962296.jpeg" alt="Mè Trắng"/>
+        <figcaption>Mè Trắng</figcaption>
+      </figure>
+    </div>
+    <h2>Cách làm sản phẩm</h2>
+    <h4>Bước 1:Ngâm và nấu gạo nếp </h4>
+    <p>Rửa sạch gạo nếp, ngâm trong nước khoảng 4-6 tiếng để gạo mềm. Sau khi ngâm, đổ gạo nếp vào nồi hấp, hấp chín gạo.</p>
+    <h4>Bước 2:Trộn nước cốt dừa và đường </h4>
+    <p>Khi gạo nếp còn nóng, cho nước cốt dừa, đường và một chút muối vào gạo.Trộn đều để nước cốt dừa và đường thấm đều vào gạo, hỗn hợp sẽ trở nên dẻo và thơm.</p>
+    <h4>Bước 3: Giã gạo </h4>
+    <p>Để hỗn hợp gạo nếp nguội một chút, sau đó giã thật nhuyễn để tạo độ mịn và dẻo.</p>
+    <h4>Bước 4: Định hình</h4>
+    <p>Lấy hỗn hợp gạo ra, tạo hình tròn hoặc vuông tùy ý bằng cách nhấn hỗn hợp vào khuôn. Phơi bánh dưới ánh nắng mặt trời cho đến khi bánh khô và cứng. Nếu trời không có nắng, có thể dùng lò sấy ở nhiệt độ thấp</p>
+    <h4>Bước 5: Phơi bánh</h4>
+      <p>Lấy bánh ra và phơi trên giàn tre, giàn lá dưới ánh nắng mặt trời. Phơi bánh đến khi khô hoàn toàn, giòn và có màu trắng trong. </p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đặc Sản Bến Tre</title>
+    <style>
+      body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+header {
+        background-color: #008148;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+      }
+
+      hd {
+        margin: 0;
+        padding-bottom: 10px; /* Tạo khoảng cách giữa tiêu đề và thanh menu */
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .nav-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        padding: 10px 0;
+      }
+
+      .logo {
+        height: 80px; /* Điều chỉnh kích thước logo */
+        width: 80px; /* Đảm bảo hình tròn */
+        border-radius: 50%; /* Làm cho logo hình tròn */
+        object-fit: cover; /* Đảm bảo logo không bị méo */
+      }
+
+      nav ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        gap: 15px;
+      }
+
+      nav ul li {
+        display: inline;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+      }
+
+section {
+    padding: 20px;
+    text-align: center;
+}
+
+.mon-an-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.mon-an {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 250px;
+}
+
+.mon-an img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+form {
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea, button {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #008148;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005f32;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+    </style>
+  </head>
+  <body>
+      <header>
+      <hd>Đặc Sản Bến Tre</hd>
+      <div class="nav-container">
+        <img src="images/logos.jpeg" alt="Logo Bến Tre" class="logo" />
+        <nav>
+          <ul>
+            <li><a href="bentre.html">Bến Tre</a></li>
+            <li><a href="trangchu.html">Các Món Ăn</a></li>
+            <li><a href="chitiet.html">Chi Tiết</a></li>
+            <li><a href="muahang.html">Mua Nguyên Liệu</a></li>
+            <li><a href="lienhe.html">Liên Hệ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section id="mon-an">
+      <h2>Các Món Ngon Của Bến Tre</h2>
+      <div class="mon-an-container">
+        <div class="mon-an">
+          <img src="https://i.vietgiaitri.com/2022/12/27/keo-dua-ben-tre-dac-san-truyen-thong-khong-the-bo-qua-068-6810008.jpg" alt="Kẹo Dừa"/>
+          <h3>Kẹo Dừa</h3>
+          <p>Kẹo dừa là món ngon đặc trưng của miền Bến Tre, làm từ dừa tươi, sữa đặc và đường, tạo nên hương vị béo ngậy, ngọt ngào. Kẹo dừa mềm mịn, thơm lừng, là món ăn vặt lý tưởng cho mọi dịp. Thưởng thức kẹo dừa, bạn sẽ cảm nhận được sự tinh túy của hương vị quê hương.</p>
+          <a href="chitiet.html#keo_dua">Chi tiết</a>
+        </div>
+        <div class="mon-an">
+          <img src="https://afamilycdn.com/150157425591193600/2023/1/6/cach-lam-mut-dua-non-ngu-sac-an-tet-da-ngon-con-dep-mat-4414-1673000891169-16730008913161442509537.jpg" alt="Mứt Dừa" />
+          <h3>Mứt dừa</h3>
+          <p>Đặc sản Bến Tre với hương vị ngọt ngào, dai mềm từ những miếng dừa tươi được chế biến tỉ mỉ. Mỗi miếng mứt dừa là sự kết hợp tuyệt vời giữa vị dừa tự nhiên và lớp đường ngọt lịm, mang đến cảm giác vừa quen thuộc vừa mới lạ.</p>
+          <a href="chitiet.html#mut_dua">Chi tiết</a>
+        </div>
+        <div class="mon-an">
+          <img src="https://ttol.vietnamnetjsc.vn/images/2020/09/08/07/01/ca-bong-kho-1.jpg" alt="Cá Bống Kho" />
+          <h3>Cá Bống Kho</h3>
+          <p>Cá bống kho là món ăn đậm đà, thơm ngon của ẩm thực Bến Tre. Những con cá bống tươi được kho với gia vị như nước mắm, tiêu, ớt, hành, tạo nên hương vị mặn ngọt hấp dẫn. Món ăn này không chỉ ngon mà còn mang đậm hương vị quê hương, thích hợp ăn kèm với cơm trắng nóng hổi.</p>
+          <a href="chitiet.html#ca_bong">Chi tiết</a>
+        </div>
+      </div>
+      <div class="mon-an-container">
+        <div class="mon-an">
+          <img src="https://i.vietgiaitri.com/2021/12/17/cach-lam-banh-xeo-yen-mach-bang-noi-chien-khong-dau-thom-ngon-cuc-don-gian-10d-6215904.jpg" alt="Bánh Xèo Ốc Gạo" />
+          <h3>Bánh Xèo Ốc Gạo</h3>
+          <p>Một trong những món ăn độc đáo và hấp dẫn của ẩm thực miền Tây Việt Nam. Với sự hòa quyện của vị giòn tan của bánh, sự thơm ngon của ốc gạo cùng với các loại rau sống tươi mát, món ăn này không chỉ làm thỏa mãn khẩu vị mà còn mang đến cho thực khách một trải nghiệm ẩm thực đầy thú vị. </p>
+          <a href="chitiet.html#banh_xeo">Chi tiết</a>
+        </div>
+        <div class="mon-an">
+          <img src="https://banhphongsondoc.vn/datafiles/36798/upload/images/b%C3%A1nh%20tr%C3%A1ng%20d%E1%BB%ABa/20190513_101833%20-%20Copy%20-%20Copy.jpg" alt="Bánh Tráng Mỹ Lồng" />
+          <h3>Bánh Tráng Mỹ Lồng</h3>
+          <p>một đặc sản nổi tiếng của tỉnh Bến Tre, Việt Nam. Được làm từ gạo nếp và mè, bánh tráng này có hương vị đặc trưng và mùi thơm lừng, hấp dẫn. Bánh tráng Mỹ Lồng thường được dùng để cuốn gỏi, nướng hay chiên giòn, là món ăn quen thuộc trong bữa ăn hàng ngày và các dịp lễ, tết của người dân miền Tây Nam Bộ.</p>
+          <a href="chitiet.html#banh_trang">Chi tiết</a>
+        </div>
+        <div class="mon-an">
+          <img src="https://mia.vn/media/uploads/blog-du-lich/banh-phong-son-doc-dac-san-danh-bat-hu-truyen-cua-tinh-ben-tre-3-1666020908.jpg" alt="Bánh Phồng Sơn Đốc" />
+          <h3>Bánh Phồng Sơn Đốc</h3>
+          <p>Một loại đặc sản nổi tiếng của tỉnh Bến Tre, Việt Nam. Được làm từ các nguyên liệu chính là gạo nếp, nước cốt dừa và đường, bánh phồng Sơn Đốc có một hương vị đặc trưng khó lẫn với bất kỳ loại bánh nào khác.</p>
+          <a href="chitiet.html#banh_phong">Chi tiết</a>
+        </div>
+      </div>
+    <footer>
+      <p>&copy; 2025 - Giới thiệu Đặc Sản Bến Tre</p>
+    </footer>
+  </body>
+</html>
